@@ -2,3 +2,9 @@
 .pixi/*
 !.pixi/config.toml
 !config.toml
+!pixi.toml
+!pixi.lock
+!gitignore
+!gitattributes
+.pyatlas
+.idea
