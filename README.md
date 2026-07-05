@@ -4,30 +4,18 @@ An intelligent job search tool that aggregates UX/design job listings and uses L
 
 ## Setup
 
-1. **Create virtual environment:**
-```bash
-python -m venv venv
-```
+This project uses [pixi](https://pixi.sh) to manage its environment and dependencies.
 
-2. **Activate virtual environment:**
+1. **Install dependencies:**
 ```bash
-# Windows
-venv\Scripts\activate
-
-# Mac/Linux
-source venv/bin/activate
-```
-
-3. **Install dependencies:**
-```bash
-pip install -r requirements.txt
+pixi install
 ```
 
 ## Running the Scrapers
 
 ### Dribbble Scraper
 ```bash
-python scrapers/dribbble_scraper.py
+pixi run scrape
 ```
 
 This will:
@@ -39,11 +27,12 @@ This will:
 
 ```
 appLLai/
-├── scrapers/           # Web scrapers for different job boards
-│   └── dribbble_scraper.py
-├── data/              # Scraped job data (JSON files)
-├── requirements.txt   # Python dependencies
-└── README.md         # This file
+├── data/
+│   ├── collection/scrapers/   # Web scrapers for different job boards
+│   │   └── dribbble_scraper.py
+│   └── data/                 # Scraped job data (JSON files)
+├── pixi.toml                 # Pixi project & dependencies
+└── README.md                 # This file
 ```
 
 ## Next Steps

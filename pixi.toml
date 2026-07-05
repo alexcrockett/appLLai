@@ -6,13 +6,11 @@ platforms = ["win-64"]
 version = "0.1.0"
 
 [tasks]
-scrape = "python scrapers/dribbble_scraper.py"
+scrape = "python data/collection/scrapers/dribbble_scraper.py"
 
 [dependencies]
 requests = ">=2.32.5,<3"
 beautifulsoup4 = ">=4.14.3,<5"
-lxml = ">=6.0.2,<7"
-pandas = ">=2.3.3,<3"
 
 [feature.dev.dependencies]
 ruff = "*"

@@ -7,6 +7,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 from datetime import datetime
+from pathlib import Path
 from typing import List, Dict
 import time
 
@@ -126,8 +127,11 @@ class DribbbleScraper:
         """Save jobs to JSON file"""
         if filename is None:
             timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-            filename = f"data/dribbble_jobs_{timestamp}.json"
-        
+            # data/collection/scrapers/dribbble_scraper.py -> parents[2] is data/
+            data_dir = Path(__file__).resolve().parents[2] / "data"
+            data_dir.mkdir(parents=True, exist_ok=True)
+            filename = str(data_dir / f"dribbble_jobs_{timestamp}.json")
+
         with open(filename, 'w', encoding='utf-8') as f:
             json.dump(jobs, f, indent=2, ensure_ascii=False)
         
