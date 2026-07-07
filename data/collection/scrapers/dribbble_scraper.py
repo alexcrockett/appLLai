@@ -128,7 +128,7 @@ class DribbbleScraper:
         if filename is None:
             timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
             # data/collection/scrapers/dribbble_scraper.py -> parents[2] is data/
-            data_dir = Path(__file__).resolve().parents[2] / "data"
+            data_dir = Path(__file__).resolve().parents[2] / "data" / "Dribbble"
             data_dir.mkdir(parents=True, exist_ok=True)
             filename = str(data_dir / f"dribbble_jobs_{timestamp}.json")
 
